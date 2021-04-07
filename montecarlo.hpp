@@ -6,16 +6,16 @@
 
 class MC{
     private:
-        int numBatches;
-        int numItems;
+        int totBatches;
+        int totItems;
         int percentBadBatch;
         int percentBadItem;
         int sampledItems;
-        std::ifstream inFile;
 
     public:
         void fileHandle(std::string fileName); //store those values in data members
-        
+        void generateDataSets(); //generate dataset for each file containing specs
+
 
 };
 #endif
