@@ -18,6 +18,14 @@ void MC::fileHandle(string fileName){
     }
     inFile.close();
 }
+void MC::printSpec(simulationNum){
+    cout << "Simulation " << simulationNum << ":" << endl;
+    cout << "\t Number of batches of items: " << totBatches << endl;
+    cout << "\t Number of items in each batch: " << totItems << endl;
+    cout << "\t Percentage of batches containing bad items: " << percentBadBatch << endl;
+    cout << "\t Percentage of items that are bad in a bad set: " << percentBadItem << endl;
+    cout << "\t Items sampled from each set: " << sampledItems << endl;
+}
 void MC::generateDataSets(){
     int randNum;
     int countBadItem = 0;
@@ -27,6 +35,7 @@ void MC::generateDataSets(){
     ofstream outFile;
     
     cout << "Generating Data Sets: " << endl;
+
     for(int i = 0; i < totBatches; i++){
         //create a file for each batch with n items 
         outFileName = "ds" + (char)i;
@@ -48,5 +57,13 @@ void MC::generateDataSets(){
                 outFile << 'g' << endl; //all items are good
             }
         }
+        outFile.close();
     }
+}
+void MC::analyzingDataSet(){ //analyze with the number of sampled items
+    //sampledItems
+
+    cout << "Analyzing Data Sets: " << endl;
+
+
 }

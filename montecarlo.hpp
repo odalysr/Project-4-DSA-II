@@ -14,8 +14,9 @@ class MC{
 
     public:
         void fileHandle(std::string fileName); //store those values in data members
+        void printSpecs(int simulationNum);
         void generateDataSets(); //generate dataset for each file containing specs
-
+        void analyzingDataSets();
 
 };
 #endif
