@@ -6,8 +6,8 @@
 
 class MC{
     private:
-        int totBatches;
-        int totItems;
+        int totBatches;//total batches with n items
+        int totItems;//items per batch
         int percentBadBatch;
         int percentBadItem;
         int sampledItems;

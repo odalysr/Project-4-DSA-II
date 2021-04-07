@@ -19,27 +19,34 @@ void MC::fileHandle(string fileName){
     inFile.close();
 }
 void MC::generateDataSets(){
-    int rand;
+    int randNum;
     int countBadItem = 0;
     int countBadBatch = 0; //track current num of bad batches processed
-    int maxCountBadBatch = percentBadBatch/totBatches; //num of bad batches per individual dataset
+    string outFileName = "";
 
     ofstream outFile;
     
     cout << "Generating Data Sets: " << endl;
     for(int i = 0; i < totBatches; i++){
         //create a file for each batch with n items 
+        outFileName = "ds" + (char)i;
+        outFile.open(outFileName)
+
         //each file will contain 'g' or 'b' per item
-        //
+        randNum += (rand()%100);//obtain a random num 0-99
 
-        if(countBadBatch != maxCountBadBatch){//there are more bad batches till max num of bad batches reached
-
-            ++countBadBatch;
-        }else{//they are good batches 
-
+        if(i%randNum<percentBadBatch){//yield to bad batches
+            for(int j = 0; j < toItems; j++){//items per bacth
+                if(j%randNum < percentBadItem){//yield to bad items
+                    outFile << 'b' << endl;
+                }else{//good item
+                    outFile << 'g' << endl;
+                }
+            }
+        }else{//good batches
+            for(int k = 0; k < toItems; k++){//items per batch
+                outFile << 'g' << endl; //all items are good
+            }
         }
-
-        //rand = rand()%100;
-
     }
 }
