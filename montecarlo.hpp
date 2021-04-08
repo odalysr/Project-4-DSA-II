@@ -17,6 +17,7 @@ class MC{
         void printSpecs(int simulationNum);
         void generateDataSets(); //generate dataset for each file containing specs
         void analyzingDataSets();
+        void PrFailure();
 
 };
 #endif
