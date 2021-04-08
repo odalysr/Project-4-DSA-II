@@ -1,6 +1,7 @@
 #include"montecarlo.hpp"
 #include<iostream>
 #include<string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -50,16 +51,21 @@ void MC::generateDataSets(){
             for(int j = 0; j < totItems; j++){//items per bacth
                 if(j%randNum < percentBadItem){//yield to bad items
                     outFile << 'b' << endl;
+                        ++countBadItem;
                 }else{//good item
                     outFile << 'g' << endl;
                 }
             }
+            ++generateDataSetsBadBatches; //count all bad batches
+             cout << "Create bad set batch # " << i; //index of bad batch
         }else{//good batches
             for(int k = 0; k < totItems; k++){//items per batch
                 outFile << 'g' << endl; //all items are good
             }
         }
         outFile.close();
+
+        cout << ", totBad = " << generateDataSetsBadBatches << " total = " << totBatches << "badpct " << percentBadItem << endl;
     }
 }
 void MC::analyzingDataSets(){ //analyze with the number of sampled items
@@ -67,23 +73,52 @@ void MC::analyzingDataSets(){ //analyze with the number of sampled items
     
     string inFileName = "";
     ifstream inFile;
-    int countSampledItems = 0;
     int randNum;
+    char sampleState;
+    int countSampledItems;
+
+    int chosenItem = totItems/sampledItems;//useless line in file, skip
+    int countIterations;
 
     cout << "Analyzing Data Sets: " << endl;
     for(int i = 0; i < totBatches; i++){
 
         inFileName = "ds" + (char)(i+1);
-        inFile.open(inFileName);
+        inFile.open(inFileName); //read each file separately
 
-        while(!inFile.eof()){//read random lines n time from each file
+
+        while(!inFile.eof()){//read sampledItems n times from each file
+            inFile >> sampleState; 
             
+            ++countIterations;
+            if((countIterations%chosenItem) == 0){ //chosen item
+                ++countSampledItems;//keep track how many sampled items you sampled
+
+                if(countSampledItems == sampledItems){//check for max sampled items
+                    if(sampleState == 'b'){//check if batch has bad items
+                        ++analyzingDataSetsBadBatches;//batch is bad
+                        cout << "Batch #" << i <<" is Bad" << endl; //print that batch is bad
+                    }
+                }else{
+                    break; //break because reached max num of sampled items
+                }
+            }
+            //keep useless items
         }
         
         inFile.close();
     }
 
 }
-void PrFailure(){
+void MC::PrFailure(){
+    double DecimalBadItem = (double)percentBadItem/100; //conversion
+
+    double base = 1 - DecimalBadItem;
+    int exponent = sampledItems;
     
+    double Pr = pow(base, exponent);
+
+    cout << "Base = " << base << "\t" << "exponent = " << exponent << endl;
+    cout << "P(Failure to detect bad batch) = " << Pr << endl;
+    cout << "Percent of bad batches actually detected = " << (analyzingDataSetsBadBatches/generateDataSetsBadBatches) << endl;
 }

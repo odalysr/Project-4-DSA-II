@@ -11,6 +11,8 @@ class MC{
         int percentBadBatch;
         int percentBadItem;
         int sampledItems;
+        int generateDataSetsBadBatches;
+        int analyzingDataSetsBadBatches;
 
     public:
         void fileHandle(std::string fileName); //store those values in data members
