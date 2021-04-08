@@ -5,7 +5,18 @@
 
 class Simulation{
     private:
-
+            int day;
+            int categories;
+            int range1;
+            int range2;
+            int range3;
+            int range4;
+            int range5;
+            int range6;
+            int range7;
+            int range8;
+            int range9;
+            
     public:
         void fileHandling();
 };
