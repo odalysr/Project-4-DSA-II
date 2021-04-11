@@ -5,8 +5,9 @@
 
 class Simulation{
     private:
-            int day;
+            int simulatedDays;
             int categories;
+            int numDays;
             int range1;
             int range2;
             int range3;
