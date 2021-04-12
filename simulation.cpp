@@ -2,6 +2,8 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<vector>
+#include<sstream>
 
 using namespace std;
 
@@ -12,9 +14,26 @@ void Simulation::fileHandling(){
         cout << "Could not open the file" << endl;
     }else{
         int days;
-        categories;
-        while(!inFile.eof()){
 
+        string range;
+        int perc;
+        int rangeA, rangeB;
+        inFile >> days;
+        inFile >> categories;
+        for(int i = 0; i < categories; i++){
+            inFile >> range >> perc;
+            this->probabilities.push_back(perc);
+            range.erase(range.end()-1);
+            range.replace(range.begin(),range.end(),"-"," ");
+            stringstream ss;
+            ss << range;
+            ss >> rangeA >> rangeB;
+            if(i == 0){
+                rangeVals.push_back(rangeA);
+            }
+            rangeVals.push_back(rangeB);
         }
+        string units;
+        inFile >> units;
     }
 }
