@@ -1,3 +1,8 @@
+/***************************************************************
+  Student Name: Odalys Rodriguez
+  File Name: montecarlo.cpp
+  Project 4
+***************************************************************/  
 #include"montecarlo.hpp"
 #include<iostream>
 #include<string>

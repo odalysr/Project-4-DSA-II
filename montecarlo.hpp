@@ -1,3 +1,8 @@
+/***************************************************************
+  Student Name: Odalys Rodriguez
+  File Name: montecarlo.hpp
+  Project 4
+***************************************************************/  
 #ifndef MONTECARLO_HPP
 #define MONTECARLO_HPP
 #include<iostream>

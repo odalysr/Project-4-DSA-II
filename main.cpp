@@ -1,3 +1,8 @@
+/***************************************************************
+  Student Name: Odalys Rodriguez
+  File Name: main.cpp
+  Project 4
+***************************************************************/  
 #include<vector>
 #include<iostream>
 #include<sstream>

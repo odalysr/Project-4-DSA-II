@@ -1,4 +1,9 @@
 
+/***************************************************************
+  Student Name: Odalys Rodriguez
+  File Name: simulation.hpp
+  Project 4
+***************************************************************/  
 #ifndef SIMULATION_HPP
 #define SIMULATION_HPP
 #include<iostream>

@@ -1,3 +1,8 @@
+/***************************************************************
+  Student Name: Odalys Rodriguez
+  File Name: simulation.cpp
+  Project 4
+***************************************************************/  
 #include"simulation.hpp"
 #include<iostream>
 #include<string>
