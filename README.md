@@ -97,7 +97,7 @@ Simulation 2:
 
 
 
- #Part 2: A Monte Carlo Simulation. Implement the process of converting historical data into the probability of occurrence of various outcomes, extracting probability distributions, assigning random number intervals, and running a simulation. Assume we are dealing with bacteria counts in Escambia bay. Our data might be like the following for 100 days of observation:
+ # Part 2: A Monte Carlo Simulation. Implement the process of converting historical data into the probability of occurrence of various outcomes, extracting probability distributions, assigning random number intervals, and running a simulation. Assume we are dealing with bacteria counts in Escambia bay. Our data might be like the following for 100 days of observation:
 
 100
 7
