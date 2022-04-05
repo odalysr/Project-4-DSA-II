@@ -1,6 +1,6 @@
 # Project-4-DSA-II
 
-#Project Description
+# Project Description
 The goals of this project are to:
 implement two types of probabilistic algorithms
 observe how expected results compare to observed results
@@ -8,7 +8,7 @@ Develop and test a program that implements the bad microchip problem and a simul
 
 For the first part, the idea is that some batches of micro-chips might not be tested, and the goal is to detect bad batches without testing all the chips in the batch. We will be simulating the process of sampling chips from a collection of batches of chips.
 
-#Part 1a: Generate data sets.
+# Part 1a: Generate data sets.
 Automate creation of what would otherwise be a user-specified number of datasets with a user-specified number of batches, batch size, percentage of the datasets containing bad chips, and percentage of bad chips in a dataset.
 When the program runs, it will automatically read four (4) test files titled t1.txt, t2.txt, t3.txt, and t4.txt, containing specs for each run, simulating how the program would work if it were getting these parameters interactively from the user. These configuration files should have the following values written as integers, one per row:
 Specification	t1.txt	t2.txt	t3.txt	t4.txt
@@ -156,7 +156,7 @@ Inputs and Outputs
 
 When your program runs, it will first automatically generate the data sets for part 1, carry out the simulation, and report results. Then, it will read the readings.txt for part 2. It will use the number of days from the readings.txt as the number of days to simulate, so NO user interaction should be needed. It will also calculate and report the expected value of the analytical model. ALL results will go to the console. Note that different data (different numbers of categories and percents) in readings.txt should work properly. 
 
-Deliverables
+# Deliverables
 
 You will submit the following for this project: 
 1. A UML diagram
